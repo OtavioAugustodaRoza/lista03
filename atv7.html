@@ -1,0 +1,87 @@
+<script>
+    /*
+    PROBLEMA: CAIXA ELETRÔNICO
+    Faça um script para um caixa eletrônico. O script deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O script não deve se preocupar com a quantidade de notas existentes na máquina.
+
+    Exemplo: Para sacar a quantia de 256 reais, o script fornece duas notas de 100, uma nota de 50, uma nota de 5 e uma nota de 1;
+    Exemplo: Para sacar a quantia de 399 reais, o script fornece três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.
+    */
+
+    //ENTRADA
+    let quantia = Number(prompt(`Informe a quantia que deseja realizar saque: `));
+    
+    //PROCESSAMENTO
+    if (quantia >= 10 && quantia <= 600) {
+        let notasCem = Math.floor(quantia / 100);
+        let notasCinquenta = Math.floor((quantia % 100) / 50)
+        let notasDez = Math.floor((quantia % 50) / 10);
+        let notasCinco = Math.floor((quantia % 10) / 5);
+        let notasUm = Math.floor(quantia % 5);
+        let notasDiferentes = 0;
+        if (notasCem > 0) notasDiferentes++;
+        if (notasCinquenta > 0) notasDiferentes++;
+        if (notasDez > 0) notasDiferentes++;
+        if (notasCinco > 0) notasDiferentes++;
+        if (notasUm > 0) notasDiferentes++;
+        let mensagemFinal = `Para sacar a quantia de ${quantia}, o script fornece `;
+        if (notasCem > 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCem} notas de 100`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        else if (notasCem == 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCem} nota de 100`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        if (notasCinquenta > 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCinquenta} notas de 50`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        else if (notasCinquenta == 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCinquenta} notas de 50`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        if (notasDez > 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasDez} notas de 10`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        else if (notasDez == 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasDez} notas de 50`;
+            if (notasDiferentes >= 2) mensagemFinal = mensagemFinal + `, `;
+            else if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        if (notasCinco > 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCinco} notas de 5`;
+            if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        else if (notasCinco == 1) {
+            notasDiferentes--;
+            mensagemFinal = mensagemFinal + `${notasCinco} nota de 5`;
+            if (notasDiferentes == 1) mensagemFinal = mensagemFinal + ` e `;
+        }
+        if (notasUm > 1) {
+            mensagemFinal = mensagemFinal + `${notasUm} notas de 1`;
+        }
+        else if (notasUm == 1) {
+            mensagemFinal = mensagemFinal + `${notasUm} nota de 1`;
+        }
+        document.write(mensagemFinal);
+    }
+    else {
+        alert(`Quantia Inválida: Informe quantia entre R$ 10,00 e R$ 600,00`);
+    }
+    
+    //SAÍDA
+
+</script>
