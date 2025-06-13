@@ -1,0 +1,36 @@
+<script>
+    /*
+    PROBLEMA: ESTAÇÃO DO ANO
+    Faça um script que pergunte para a pessoa em qual hemisfério ela está e qual o mês atual.
+    De acordo com as respostas, informe qual a estação do ano correspondente.
+    */
+
+    //ENTRADA
+let hemisferio =prompt("Em qual hemisfério você está? norte ou sul.");
+let mes=prompt("escreva o mês atual?");
+let resultado = "";
+    //PROCESSAMENTO
+    if (hemisferio === "sul") {
+if (mes === "dezembro" || mes==="janeiro" || mes==="fevereiro") {
+        resultado="verão";
+} else if (mes === "março" || mes === "abril" || mes==="maio") {
+        resultado="Outono";
+} else if (mes === "junho" || mes==="julho" || mes==="agosto") {
+      resultado="Inverno";
+ } else if (mes === "setembro" || mes==="outubro" || mes==="novembro") {
+      resultado="Primavera";
+ } 
+} else if (hemisferio === "norte") {
+ if (mes === "dezembro" || mes === "janeiro" || mes === "fevereiro") {
+     resultado="Inverno";
+ } else if (mes === "março" || mes === "abril" || mes === "maio") {
+       resultado="Primavera";
+  } else if (mes === "junho" || mes === "julho" || mes === "agosto") {
+      resultado="Verão";
+  } else if (mes === "setembro" || mes === "outubro" || mes === "novembro") {
+      resultado="Outono";
+ } 
+ } 
+    //SAÍDA
+alert(resultado);
+</script>
