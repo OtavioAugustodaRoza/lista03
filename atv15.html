@@ -1,0 +1,19 @@
+<script>
+    /*
+    PROBLEMA: NÚMERO INTEIRO OU DECIMAL
+    Faça um script que peça um número e informe se o número é inteiro ou decimal.
+    Dica: utilize uma função de arredondamento.
+    */
+
+    //ENTRADA
+    let numero = Number(prompt("Escreva um número:"));
+    //PROCESSAMENTO
+    let mensagem="";
+    if (Number.isInteger(numero)) {
+        mensagem="inteiro";
+    } else {
+        mensagem="decimal";
+    }
+    //SAÍDA
+    alert(`O número é ${mensagem}`);
+</script>
