@@ -5,16 +5,43 @@
     */
 
     //ENTRADA
-const a = Number(prompt('escreva um número:'));
-const b = Number(prompt('escreva outro número:'));
-const c = Number(prompt('escreva mais outro:'));
-    
+    const a=Number(prompt("escreva o número 1"));
+    const b=Number(prompt("escreva o número 2"));
+    const c=Number(prompt("escreva o número 3"));
     //PROCESSAMENTO
-let ordem = [a,b,c];   
-ordem.sort((a, b) => b - a);
-//usei lista porque era mais rapido que encher de if e else if (:  e o sort vi num vídeo do GUSTAVO GUÁNABARA canal curso em vídeo.
-
+    let numeroMaisgrande= 0;
+    let numeroDoMeio= 0;
+    let ultimoNumero= 0;
+    if (a > b && a > c) {
+        numeroMaisgrande = a;
+        if (b > c) {
+            numeroDoMeio = b;
+            ultimoNumero = c;
+        } else {
+            numeroDoMeio = c;
+            ultimoNumero = b;
+        }
+    } 
+    if (b > a && b > c) {
+        numeroMaisgrande = b;
+        if (a > c) {
+            numeroDoMeio = a;
+            ultimoNumero = c;
+        } else {
+            numeroDoMeio = c;
+            ultimoNumero = a;
+        }
+    } 
+    if (c > b && c > a) {
+        numeroMaisgrande = c;
+        if (b > a) {
+            numeroDoMeio = b;
+            ultimoNumero = a;
+        } else {
+            numeroDoMeio = a;
+            ultimoNumero = b;
+        }
+    }
     //SAÍDA
-alert(ordem);
-// [:
+    alert(`${numeroMaisgrande} ${numeroDoMeio} ${ultimoNumero}`);
 </script>

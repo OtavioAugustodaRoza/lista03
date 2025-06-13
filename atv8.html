@@ -12,12 +12,12 @@ let ladoC=Number(prompt('escreva o valor do terceiro lado:'));
     //PROCESSAMENTO
 if ( ladoA+ladoB>ladoC && ladoA===ladoB && ladoA===ladoC) {
     alert('É um triângulo e ele é equilátero ');
-}else if (ladoA+ladoB>ladoC && ladoA!=ladoB!=ladoC) {
+}else if (ladoA+ladoB>ladoC && ladoA!==ladoB && ladoA!==ladoC && ladoB!==ladoC) {
     alert('É um triângulo e ele é escaleno.');
-}else if (ladoA+ladoB>ladoC && ladoA==ladoB || ladoA==ladoC || ladoB==ladoC) {
-    alert('É um triângulo e ele é Isósceles.')
+}else if (ladoA+ladoB>ladoC && ladoA===ladoB || ladoA===ladoC || ladoB===ladoC) {
+    alert('É um triângulo e ele é Isósceles.');
 }else{
-    alert('não é um triângulo.')
+    alert('não é um triângulo.');
 }
     //SAÍDA
 
